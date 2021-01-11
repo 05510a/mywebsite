@@ -1,0 +1,572 @@
+/* GLOBAL */
+html,body{
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+/* END GLOBAL  */
+
+/* HEADER  */
+header{
+    position: absolute;
+    top:20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    
+    z-index: 100;
+
+}
+#movieNavbar .navbar-nav{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+#movieNavbar .navbar-nav .nav-item::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    display: block;
+    /* #fbbd61,#ec7532 */
+    /* #fbbd61 : left bắt đầu */
+    /* #ec7532:right kết thúc */
+    /* tham số: hướng chuyển màu, màu bắt đầu. màu kết thúc */
+   background: linear-gradient(to right,#fbbd61,#ec7532);
+   transition: all 0.5s;
+}
+#movieNavbar .navbar-nav .nav-item:hover::after{
+width: 100%;
+}
+#movieNavbar .navbar-nav .nav-item.active::after{
+    width: 100%;
+}
+#movieNavbar .navbar-nav .nav-item  a{
+    padding: 20px 24px;
+}
+.container .text-white .fas{
+    font-size: 12px;
+    margin-right: 5px;
+}
+.container .text-white .fa{
+    font-size: 12px;
+    margin-left: 15px;
+    border-left: 1px dotted rgba(255,255,255,.5);
+    padding-left: 15px;
+}
+.container .text-white:hover{
+    cursor: pointer;
+}
+/* CAROUSEL */
+#movie-carousel .carousel-caption{
+    text-align: left;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+#movie-carousel .carousel-indicators li{
+    width: 10px;
+    height: 10px;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 1;
+    /* sửa backgroudn-clip  */
+    background-clip: border-box;
+}
+#movie-carousel .carousel-indicators li.active {
+    background-color: white;
+}
+#movie-carousel .carousel-indicators{
+    /* xét contaier để nó có chiều ngang giống nhau */
+    justify-content: flex-start;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#movie-carousel .carousel-inner .carousel-caption .head{
+    color: #fbbd61;
+    letter-spacing: 2px;
+}
+#movie-carousel .carousel-inner .carousel-caption h2{
+    font-size: 52px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+
+}
+#movie-carousel .carousel-inner .carousel-caption .details{
+    font-size: 18px;
+}
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer .PG{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 5px;
+}
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer button{
+    background:linear-gradient(to right,#fbbd61,#ec7532);
+    padding: 12px 24px;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    color: white;
+    border: none;
+}
+
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer button i{
+    margin-right: 10px;
+    
+    
+}
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer button{
+    position: relative;
+    overflow: hidden;
+  
+}
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer button i, span{
+    position: relative;
+    z-index: 1;
+}
+
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer .carousel__Trailer__overlay{
+    position: absolute;
+    top:0;
+    left: -20px;
+    background-color: #ec7532;
+    height: 100%;
+    width: 150%;
+    transform: skewX(30deg) translateX(-130%);
+    transition: all 0.5s;
+    z-index: 0;
+}
+#movie-carousel .carousel-inner .carousel-caption .carousel__Trailer button:hover .carousel__Trailer__overlay{
+    transform: skewX(30deg) translateX(0%);
+    
+}
+
+/* newIN */
+.newIN{
+    padding: 70px 0px;
+}
+.newIN h2{
+    text-transform: uppercase;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    position: relative;
+    color: #ec7532;
+}
+.newIN h2::after{
+    content:"";
+    background:linear-gradient(to right, #fbbd61,#ec7532);
+    height: 4px;
+    width: 125px;
+    position: absolute;
+    bottom:-1px;
+    left: 0;
+}
+.newIn__img{
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.newIn_overplay{
+position: absolute;
+top:0;
+left: 0;
+width: 200%;
+height: 100%;
+background: linear-gradient(to bottom, #fbbd61, #ec7532);
+opacity: 0.8;
+transform: skewX(30deg) translateX(-130%);
+transition: all 0.5s;
+}
+.newIn__img:hover .newIn_overplay{
+    transform: skewX(30deg) translateX(-20%);
+}
+.newIn__text p{
+    font-size: 15px;
+    text-align: center; 
+    padding: 15px 0;
+}
+.newIn__text div{
+    text-align: center;
+}
+.newIn__text i:nth-child(n+1){
+    
+    color: #fbbd61;
+}
+.newIn__content .newIn__play{
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+   opacity: 0;
+   transition: all 0.5s;
+}
+.newIn__content .newIn__img:hover .newIn__play{
+    opacity: 1;
+}
+.newIn__content .newIn__play i{
+    margin-bottom: 10px;
+    width: 72px;
+    height: 72px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 72px;
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+.newIn__content .newIn__play i:hover{
+    cursor: pointer;
+    transform: scale(1);
+}
+.newIn__content .newIn__play p:hover{
+    cursor: pointer;
+}
+
+
+/* SHOW TIME  */
+.showTime .nav-tabs{
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);  
+}
+.showTime .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    color: #ec7532;
+    border: none;
+}
+.showTime .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover{
+    color: #ec7532;
+    border: none;
+}
+.showTime .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:focus{
+    outline: none;
+   }
+.showTime .nav-tabs .nav-item{
+    padding: 10px 15px;
+    position: relative;
+}
+.showTime .nav-tabs .nav-item::after{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(to right,#fbbd61,#ec7532);
+    left: 0;
+    bottom: 0;
+    ;
+    transition: all 0.5s;
+}
+.showTime .nav-tabs .nav-item a{
+    color: black;
+}
+.showTime .nav-tabs .nav-item:hover::after{
+ width: 100%;
+}
+.showTime .nav-tabs .nav-item.active::after{
+    width: 100%;
+}
+.showTime .nav-tabs .nav-item.active a{
+    color: #ec7532;
+}
+.showTime .nav-tabs .nav-link{
+    border: none;
+}
+.tab-content p{
+    font-size: 17px;
+    color: #ec7532;
+}
+.tab-content .details{
+color: black;
+}
+.tab-content a{
+    color: #ec7532;
+    transition: all 0.5s;
+}
+.tab-content a:hover{
+    color: black;
+    text-decoration: none;
+}
+.tab-content button{
+    background-color: #5a6268;
+    border: none;
+    margin:0 10px;
+    border-radius: 10px;
+}
+.showTime .tab-pane{
+    padding: 40px 0;
+}
+.showTime .tab-pane .py-3{
+    margin: 40px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    padding-bottom: 50px!important;
+}
+.showTime .tab-pane img{
+    border-radius: 15px;
+}
+.showTime .tab-pane .row .time{
+    align-self: center;
+}
+.showTime .tab-pane .row .time .time1{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: ;
+}
+.showTime .tab-pane .row .time .circle{    display:inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+}
+.tab-content .btn-secondary:disabled{
+    color: #717171;
+    background-color: #d8d8d8;
+    border-color: #d8d8d8;
+}
+.tab-content button{
+    background-color: #d8d8d8;
+}
+.tab-content .btn-secondary{
+    color: #717171;
+}
+/* COMMING SOON  */
+.commingSoon{
+    background-color: black;
+    color: white;
+    position: relative;
+}
+.commingSoon__bg{
+    background-image: url(../../images/slide-3.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.commingSoon .commingSoon__content h2{
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 70px;
+}
+.commingSoon .commingSoon__content h2:after{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    height: 3px;
+    width: 10%;
+    background: linear-gradient(to left,#fbbd61,#ec7532);
+}
+.commingSoon__content .col-6 .title{
+color: #ec7532;
+letter-spacing: 2px;
+font-weight: normal;
+}
+.commingSoon__content .col-6 h3{
+    font-size: 34px;
+    font-weight: normal;
+}
+.commingSoon__content .fa-star{
+    color: #fbbd61;
+    margin: 0 2px;
+}
+.commingSoon__content .fa-calendar-alt{
+    margin: 0 2px;
+}
+.commingSoon__content .details{
+    margin: 20px 0;
+}
+.commingSoon__content .moreinfo{
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #ec7532;
+    transition: all 0.5s;
+}
+.commingSoon__content .moreinfo:hover{
+    cursor: pointer;
+    color: #fbbd61;
+}
+.commingSoon__content .conmingsoon__content{
+    position: relative;
+}
+.commingSoon__content .commingsoon__icon i{
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ec7532;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    color:white;
+    font-size: 25px;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.commingSoon__content .commingsoon__icon:hover i{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+.commingsoon__icon img{
+    max-width: 100%;
+    height: auto;
+    vertical-align:middle;
+}
+
+
+/* .moveList  */
+.moveList .moveList__content .commingSoon__img img{
+    width: 100%;
+    border-radius: 10px;
+}
+.moveList .moveList__content .commingSoon__img h5{
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.moveList .moveList__content .commingSoon__img p{
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+    font-size: 14px;
+    }
+.moveList .moveList__content .commingSoon__img{
+    opacity:0.5; 
+    transition: all 0.5s;
+}
+.moveList .moveList__content .commingSoon__img:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.moveList{
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 70px 0;
+}
+.moveList .moveList__content .commingSoon__img .long{
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.moveList .moveList__content .commingSoon__img.active{
+    opacity: 1;
+}
+/* CONTACT */
+/* CONTACT TOP  */
+.contact__contenttop{
+background-color: white;
+text-align: center;
+padding: 50px 0;
+}
+.contact__contenttop p{
+    font-size: 23px;
+    color: #4a4a4a;
+    font-weight: 300;
+}
+.contact__contenttop h2{
+    color: #ec7532;
+    font-size: 46px;
+    
+}
+/* CONTACT BOT  */
+.contact__contentBot{
+    background-color: black;
+    padding-top: 70px;
+}
+.contact__contentBot h6{
+    letter-spacing: 2px;
+color: #ec7532;
+padding-bottom: 20px;
+}
+.contact__contentBot ul{
+    padding: 0px;
+    list-style-type: none;
+    color: white;
+}
+.contact__contentBot ul li{
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    transition: all 0.5s;
+}
+.contact__contentBot ul li:hover{
+    color: #fbbd61;
+    cursor: pointer;
+}
+.contact__contentBot ul li i{
+    margin-right: 15px;
+    color: #717171;
+    transition: all 0.5s;
+}
+.contact__contentBot ul li:hover i{
+    margin-right: 15px;
+    color: #fbbd61;
+}
+.coppyright{
+    border-top: 1px solid #333;
+    color: white;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 14px;
+
+}
+
+.coppyright span{
+    transition: all 0.5s;
+}
+.coppyright span:hover{
+    color: #ec7532;
+    cursor: pointer;
+}
+/* END CONTACT */
+/* RESPONSIVE */
+@media screen and (max-width:576px){
+ #myTabContent img.img-fluid{
+     width: 100%;
+ }   
+}
+@media screen and (max-width:768px){
+    .commingSoon__content .conmingsoon__content{
+        margin: 30px 0;
+    }
+   }
+   @media screen and (max-width:990px){
+    .moveList .commingSoon__img5, .commingSoon__img6{
+        display: none;
+        
+    }
+   }
+   @media screen and (max-width:767px){
+    .moveList .commingSoon__img4{
+        display: none;
+    }
+   }
+   @media screen and (max-width:570px){
+    .moveList .commingSoon__img3{
+        display: none;
+    }
+   }
+   
+ 
